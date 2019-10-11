@@ -10,5 +10,5 @@ if __name__ == '__main__':
         path.join(path.dirname(__file__), 'awesome', 'plugins'),
         'awesome.plugins'
     )
-    nonebot.run(host='127.0.0.1', port=8099)
+    nonebot.run(host='0.0.0.0', port=8099)
 
