@@ -8,7 +8,8 @@ async def get_weather(city):
     _response.encoding='utf-8'
 
     _result=requests.get(url);
-    _code = _result.status_code
     print(_result)
+    _code = _result.status_code
+
     _response.close()
     return _result;
