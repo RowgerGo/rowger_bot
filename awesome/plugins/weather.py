@@ -44,10 +44,13 @@ async def get_weather_of_city(city: str) -> str:
 
     res = await  get_weather(city);
     print("===================" + "function")
-    _result = res.json();
-    _result=json.dumps(_result)
-    _result=json.loads(_result)['result']['realtime']
-    r = city  +"：气温"+_result['temperature']+"度,"+_result['info'];
-    print(r);
+    try:
+        _result = res.json();
+        _result=json.dumps(_result)
+        _result=json.loads(_result)['result']['realtime']
+        r = city  +"：气温"+_result['temperature']+"度,"+_result['info'];
+    except TypeError:
+       print("天气查询失败")
+       r = "天气查询失败"
 
     return r
